@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+    <title>css</title>
+    <style>
+        .outer-container {
+            border: 1px solid black;
+             width:300px;
+            height:80vh;
+            margin: 20px auto;
+        }
+        .inner-container {
+            border: 1px solid blue;
+            height: 150vh;
+            width: 60vh;
+        }
+        .box {
+            border: 2px solid white;
+            height:100px;
+            width: 100px;
+            
+            border:1px solid black;
+        }
+        .abs {
+            position: absolute;
+            top: 10px;
+            left: 100px;
+            background-color: green;
+        }
+        .rel {
+            position: relative;
+            top: 10px;
+            left: 100px;
+            background-color: blue;
+        }
+        .fix{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: yellow;
+        }
+        .st{
+            position: sticky;
+            top: 100px;
+            left:100px;
+            background-color: red;
+        }
+    </style>
+    </head>
+<body>
+    <div class="outer-container">
+   <div class="inner-container">
+        <div class="box abs">Absolute</div>
+        <div class="box fix">Fixed</div>
+        <div class="box rel">Relative</div>
+        <div class="box sti">Sticky</div>
+    </div>
+</div>
+</body>
+</html>
