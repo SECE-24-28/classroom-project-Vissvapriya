@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day3 javascript</title>
+    <script>
+        // Function to display image on button click repeated by clicking next and previous
+        
+        let num=0;
+        let arr=["images.jpeg","image2.jpg","image3.AVIF"]; 
+        function next() {
+        num++;
+        if(num>=arr.length){
+            num=0;
+        }
+        let img=document.getElementById("im");
+        img.src=arr[num];
+    }
+        function prev() {
+        num--;
+        if(num<0){
+            num=2;
+        }
+        let img=document.getElementById("im");
+        img.src=arr[num];   
+        }
+         
+    </script>
+</head>
+<body>
+    <img src="images.jpeg" alt="" width="400px" height="400px" id="im"/>
+    <button onclick="next()">pervious</button>
+    <button onclick="prev()">next</button>  
+</body>         
+</html>
