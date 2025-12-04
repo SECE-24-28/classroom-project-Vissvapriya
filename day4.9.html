@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day4 javascript</title>
+</head>
+<body>
+    <h1>Current time</h1>
+
+<h2 id="time" ></h2>
+
+<script>
+let hr = 2;
+let min = 53;
+let sec = 50;
+
+function updateTime() {
+    sec++;
+
+    if (sec == 60) {
+        sec = 0;
+        min++;
+    }
+
+    if (min == 60) {
+        min = 0;
+        hr++;
+    }
+
+    if (hr == 24) {
+        hr = 0;
+    }
+
+    // Format: 08:05:09
+    let display =
+      (hr < 10 ? "0" + hr : hr)   + ":" +
+      (min < 10 ? "0" + min : min) + ":" +
+      (sec < 10 ? "0" + sec : sec);
+
+    document.getElementById("time").innerHTML = display;
+}
+
+// Run every 1 second
+setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>

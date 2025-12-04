@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day4 javascript</title>
+</head>
+<body>
+
+<form>
+  <p id="error" style="color:red;"></p>
+
+  <label>User Name</label>
+  <input type="text" id="user" placeholder="enter name">
+
+  <label>Email</label>
+  <input type="text" id="mail" placeholder="enter email">
+
+  <button id="btn">Submit</button>
+</form>
+
+<script>
+  let er = document.getElementById("error");
+  let us = document.getElementById("user");
+  let ma = document.getElementById("mail");
+
+  document.getElementById("btn").addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (us.value == "" || ma.value== "") {
+          er.innerHTML = "Fields should not be empty...";
+      } else {
+          alert("Login success");
+          
+      }
+  });
+</script>
+
+</body>
+</html>

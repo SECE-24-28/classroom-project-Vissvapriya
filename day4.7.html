@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day4 javascript</title>
+  <style>
+    #bt{
+        background-color: beige;
+    }
+  </style>
+</head>
+<body>
+
+    <input type="text" id="t1" placeholder="enter item">
+    <button id="bt" onclick="addItem()">add item</button>
+
+    <ol id="myList"></ol> 
+
+    <script>
+    function addItem() {
+      let txt = document.getElementById("t1").value;
+
+      if (txt == "") {
+        alert("Please enter a task");
+        return;
+      }
+
+      let ol = document.getElementById("myList");
+      let li = document.createElement("li");
+      li.innerHTML = txt;
+      ol.appendChild(li);
+
+      document.getElementById("t1").value = "";
+    }
+    </script>
+
+</body>
+</html>
+
+
+

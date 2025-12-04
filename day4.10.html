@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day4 Javascript</title>
+
+  
+</head>
+
+<body>
+  <h1 id="h1">Light Mode</h1>
+  <button id="btn">Switch Mode</button>
+
+  <script>
+    let mode = 0; // 0 = light, 1 = dark
+
+    const heading = document.getElementById("h1");
+    const button = document.getElementById("btn");
+
+    button.addEventListener("click", () => {
+      if (mode === 0) {
+        // Switch to Dark Mode
+        mode = 1;
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        heading.innerHTML = "Dark Mode";
+      } 
+      else {
+        // Switch to Light Mode
+        mode = 0;
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        heading.innerHTML = "Light Mode";
+      }
+    });
+  </script>
+
+</body>
+</html>
