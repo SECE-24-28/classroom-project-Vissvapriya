@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day4 javascript</title>
+</head>
+<body>
+    <button onclick="loadUsers()">Load users</button>
+    <p id="pa"></p>
+    <div id="output"></div>
+
+<script>
+    let pa = document.getElementById("pa");
+    let out = document.getElementById("output");
+
+
+    
+    function loadUsers() {
+        pa.innerHTML = "Loading...";
+        out.innerHTML = "";
+
+        setTimeout(() => {
+
+            fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(users => {
+
+                pa.innerHTML = "Users Loaded";
+
+                // Show each user's data separately
+                users.forEach(user => {
+                    let block = document.createElement("pre"); // preserves formatting
+                    block.style.border = "1px solid gray";
+                    block.style.padding = "10px";
+                    block.style.margin = "10px 0";
+
+                    block.textContent =
+`Name: ${user.name}
+Email: ${user.email}
+Phone: ${user.phone}
+City: ${user.address.city}
+Company: ${user.company.name}`;
+
+                    out.appendChild(block);
+                });
+
+            });
+
+        }, 2000);
+    }
+</script>
+</body>
+</html>
